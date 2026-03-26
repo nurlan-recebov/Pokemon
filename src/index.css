@@ -1,24 +1,59 @@
 body {
   text-align: center;
   font-family: sans-serif;
+  padding: 10px;
 }
 
+/* Container */
 .cards {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap; /* 🔥 əsas dəyişiklik */
 }
 
+/* Card */
 .card {
   border: 1px solid gray;
   padding: 10px;
   border-radius: 10px;
+  width: 150px;
+  transition: 0.3s;
 }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Button */
 button {
   margin-top: 10px;
   padding: 5px 10px;
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .cards {
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* 📲 Tablet */
+@media (min-width: 601px) and (max-width: 992px) {
+  .card {
+    width: 45%;
+  }
+}
+
+/* 💻 Desktop */
+@media (min-width: 993px) {
+  .card {
+    width: 150px;
+  }
 }
